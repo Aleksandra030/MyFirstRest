@@ -11,6 +11,9 @@ Radi kreiranja aplikacije potrebno je bilo ispuniti sledeće zahteve:
 
 Sačuvane RDF podatke potrebno je učiniti dostupnim korisnicima. Implementacija REST servisa koji će biti dostupan na Web-u predstavlja rešenje koje korisnicima pruža API sa dostupnim operacijama za pristup tim podacima. Pristupajući različitim URL-ovima koje nudi REST API, korisnik šalje upite i dobija željene podatke u JSON formatu. 
 #2.	Domenski model
+
+![sl1](https://cloud.githubusercontent.com/assets/6192416/4282023/202fbac4-3d4f-11e4-87f5-ad520317da2f.jpg)
+
 Klasa CreativeWork opisuje strukturu kursa, obuhvatajući instruktore, univerzitete i same sesije kursa ukoliko ih ima. Za svaki kurs definisan je jezik, kao i samo trajanje kursa.
 
 Klasa Person predstavlja insturtktora datog kursa i u modelu je definisan samo atribut koji predstavlja ime. 
