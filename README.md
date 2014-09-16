@@ -90,5 +90,57 @@ Primer JSON formata jednog od kurseva
 			"homeLink":https://class.coursera.org/ml-2012-002/
 		},
 ``` 
+Udacitu
+
+Udacity trenutno nudi 11 kurseva na temu nauke i matematike. Udacity je bez rokova, bez preduslova, bez kvizova i drugih neugodnih školskih stvari. Kursevi na portalu Udacity razvrstani su prema kategorijama na početne, kurseve srednje težine i napredne kurseve. Moguće je izabrati nivo težine u zavisnosti od prethodnog znanja. Udacity kurs koristi nov i veoma zanimljiv način organizovanja onlajn predavanja, gde promoviše učenje pomoću rešavanja kraćih zadataka i učestvovanje u projektima koje vode profesori sa prestižnih svetskih univerziteta. Kao nagradu za uložen trud i rad, nakon odslušanih i položenih kurseva dodeljuju se sertifikati koji su priznati od strane velikih tehnoloških kompanija.
+Udacity API
+Udacity Course Catalog API  treba da olakša preduzećima, sajtovima i pojedincima programski pristup Udacity kursevima https://www.udacity.com/public-api/v0/courses
+Format odgovora
+Udacity API svoje podatke pruža u JSON formatu. Uspešan odgovor iz API krajnje tačke je JSON objekat na sledećem listingu.
+```json
+{
+"courses":[
+{
+"key":"cs101",
+"title":"IntrotoComputerScience",
+"homepage":"https://www.udacity.com/course/cs101",
+"subtitle":"BuildaSearchEngine&aSocialNetwork",
+"level":"beginner",
+"starter":true,"image":"https://lh5.ggpht.com/ITepKi-2pz4Q6lrLfv6QDNViEG…",
+"banner_image":"https://lh4.ggpht.com/9L_ZBdT4T19FvJGW…",
+"teaser_video":{
+"youtube_url":"https://www.youtube.com/watch?v=Pm_WAWZNbdA"
+},
+"summary":"Inthisintroductorycourse,you'lllearn…",
+"short_summary":"Learnkeycomputerscienceconceptsin…",
+"required_knowledge":"Thereisnopriorprogramming…",
+"expected_learning":"You'lllearntheprogramminglanguage…",
+"featured":true,
+"syllabus":"###Lesson1:HowtoGetStarted…",
+"faq":"###Whendoesthecoursebegin?Thisclassisself…",
+"full_course_available":true,
+"expected_duration":3,
+"expected_duration_unit":"months",
+"new_release":false,
+"tracks":["DataScience","WebDevelopment","SoftwareEng"],
+"affiliates":[],
+"instructors":[{"name":"DaveEvans","bio":"Daveis...","image":"https://lh6.ggpht.com/1x-8cXA7J…"}]
+},
+{"key":"cs046","title":"IntrotoJavaProgramming","faq":"","affiliates":[{"name":"SanJoseStateUniversity","image":"https://lh3.ggpht.com/MpxH41jmm6mn0XOaVq6d…"}],"instructors":[{"name":"CayHorstmann","bio":"CaygrewupinNorth…","image":"https://lh5.ggpht.com/bpMaSLEZOPel9P2s4AIo…"}],…},…],"tracks":[{"courses":["cs101","ud359","ud827","ud201","ud617",…],"name":"DataScience","description":"Learndatasciencefromindustryexperts…"},…]} 
+
+```
+
+#4.	Tehnička realizacija
+Jenabean  je framework koji povezuje Java objekte i RDF podatke. On omogućava jednostavno mapiranje koncepata objektno orjentisanog programiranja u RDF klase i propertije. Jenabean koristi anotacije kako bi se deklarisao način na koji se objekti (beans) mapiraju u RDF. Različitim anotacijama moguće je mapirati klase u Javi sa određenim RDF klasama, postaviti neki atribut za jedinstveni identifikator, kao i mapirati određeno polje u Java klasi sa propertijem u RDF-u. Jenabean definiše klase RDF2Bean i Bean2RDF koje se oslanjaju na klasu RDFModel i omogućavaju konverziju podataka iz RDF-a u Java objekte i obrnuto. 
+Za čitanje i upisivanje RDF podataka korišćena je Jenabean biblioteka. Ona rešava problem prevođenja RDF tripleta u Java objekte i obrnuto. Prevođenje se zasniva na anotacijama.
+
+Za skladištenje podataka u RDF repozitorijum korišćena je TDB  komponenta Jena framework-a, koja, pored skladištenja, omogućava i izvršavanje različitih vrsta SPARQL upita nad podacima u RDF formatu. TDB omogućava i pojedine napredne mehanizme, poput transakcija, koji se mogu koristiti prilikom manipulacije podacima. 
+
+REST servisi su u ovom projektu implementirani preko Jersey  biblioteke. Jersey omogućava kreiranje REST metoda jednostavnim anotiranjem Java klasa i metoda. Na osnovu anotacija, određene klase su predstavljene kao servisi, koji sadrže anotacijama označene metode koje prihvataju i obrađuju HTTP zahteve (GET, POST...). Aplikacija na ovaj način isporučuje podatke (u JSON formatu) klijentima, na osnovu različitih parametara koje oni proslede preko HTTP zahteva, a u skladu sa specifikacijom servisa datom u prethodnom poglavlju.
+
+Gson  biblioteka konvertuje Java objekte u njihovu JSON reprezentaciju. Biblioteka za programski jezik Java koja se bavi serijalizacijom i deserijalizacijom Java objekata u JSON objekte. Takođe može da konstruiše Java objekat iz JSON stringa. 
+
+
+
 
 
