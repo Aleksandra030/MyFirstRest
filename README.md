@@ -30,15 +30,22 @@ Coursera API
 Kursevi sa Coursera sajta dostupni su preko njihovog API-ja i dati su u JSON formatu i primer jednog takvog kursa možemo videti na slici. API katalog sadrži listu kurseva, instruktora i univerziteta dostupnih na Coursera platformi. API  je dostupan javno bez autentifikacije preko Interneta. Osnovne URL adrese API-ja su:
 *	Kursevi:  https://api.coursera.org/api/catalog.v1/courses
 *	Univerziteti: https://api.coursera.org/api/catalog.v1/universities
-*	Kateforije: https://api.coursera.org/api/catalog.v1/categories
-Instrukori: https://api.coursera.org/api/catalog.v1/instructorsSesije: https://api.coursera.org/api/catalog.v1/sessionsPrimer zahteva
+*	Kategorije: https://api.coursera.org/api/catalog.v1/categories
+* Instrukori: https://api.coursera.org/api/catalog.v1/instructors
+* Sesije: https://api.coursera.org/api/catalog.v1/sessions
+
+Primer zahteva
 Slanje GET metode do osnovne adrese servisa će vratiti celu kolekciju datih resursa (kurseva, instruktora). Da bi se dobili podaci pojedinacnih elemenata, potrebno je dodati id samog resursa u putanju. Sledeća dva primera poziva su ekvivalentna:
-1	curl https://api.coursera.org/api/catalog.v1/courses/2
-2 curl https://api.coursera.org/api/catalog.v1/courses?id=2
+* 1	curl https://api.coursera.org/api/catalog.v1/courses/2
+* 2 curl https://api.coursera.org/api/catalog.v1/courses?id=2
 Po defaultu, samo minimalni skup polja su uključeni u objektima odgovora. Da bi odgovor sadržao više polja, uključuju se njihova imena u upitu polja parametar. Na primer, sledeći zahtev obuhvata jezik i kratak opis u odgovoru.
+
 curl https://api.coursera.org/api/catalog.v1/courses?fields=language,shortDescription
+
 U samom linku kursa mogu biti uključeni više objekata. Na primer, sledeći zahtev će vratiti kurseve, kao i osnovne informacije o sesijama: 
+'''
 curl https://api.coursera.org/api/catalog.v1/courses?includes=sessions
+'''
 Primer JSON formata jednog od kurseva
 
 
