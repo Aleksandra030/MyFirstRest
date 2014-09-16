@@ -36,18 +36,59 @@ Kursevi sa Coursera sajta dostupni su preko njihovog API-ja i dati su u JSON for
 
 Primer zahteva
 Slanje GET metode do osnovne adrese servisa će vratiti celu kolekciju datih resursa (kurseva, instruktora). Da bi se dobili podaci pojedinacnih elemenata, potrebno je dodati id samog resursa u putanju. Sledeća dva primera poziva su ekvivalentna:
+``` 
 * 1	curl https://api.coursera.org/api/catalog.v1/courses/2
 * 2 curl https://api.coursera.org/api/catalog.v1/courses?id=2
+``` 
 Po defaultu, samo minimalni skup polja su uključeni u objektima odgovora. Da bi odgovor sadržao više polja, uključuju se njihova imena u upitu polja parametar. Na primer, sledeći zahtev obuhvata jezik i kratak opis u odgovoru.
-
+``` 
 curl https://api.coursera.org/api/catalog.v1/courses?fields=language,shortDescription
-
+``` 
 U samom linku kursa mogu biti uključeni više objekata. Na primer, sledeći zahtev će vratiti kurseve, kao i osnovne informacije o sesijama: 
-'''
+``` 
 curl https://api.coursera.org/api/catalog.v1/courses?includes=sessions
-'''
+``` 
+
 Primer JSON formata jednog od kurseva
-
-
+``` json
+{
+"elements":
+	[
+		{
+			"id":2,
+			"shortName":"ml",
+			"name":"Machine Learning",
+			"language":"en",
+			"previewLink":"https://class.coursera.org/ml-005/lecture/preview",
+			"shortDescription":"Learn about the most effective machine learning techniques, and gain practice implementing them and getting them to work for yourself.","targetAudience":1,"instructor":"Andrew Ng, Associate Professor",
+			"links":{
+				"universities":[1],
+				"instructors":[1244],
+				"sessions":[
+					16,152,970311,971489,972224,972303,972304
+				]
+			}
+		}
+	],
+"linked":{
+	"universities":[
+		{
+			"id":1,
+			"shortName":"stanford"
+		}
+	],
+	"instructors":[
+		{
+			"id":1244,
+			"firstName":"Andrew",
+			"lastName":"Ng"
+		}
+	],
+	"sessions":[
+		{	
+			"id":152,
+			"homeLink":https://class.coursera.org/ml-2012-002/
+		},
+``` 
 
 
