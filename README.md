@@ -12,7 +12,8 @@ Radi kreiranja aplikacije potrebno je bilo ispuniti sledeće zahteve:
 Sačuvane RDF podatke potrebno je učiniti dostupnim korisnicima. Implementacija REST servisa koji će biti dostupan na Web-u predstavlja rešenje koje korisnicima pruža API sa dostupnim operacijama za pristup tim podacima. Pristupajući različitim URL-ovima koje nudi REST API, korisnik šalje upite i dobija željene podatke u JSON formatu. 
 #2.	Domenski model
 
-![sl1](https://cloud.githubusercontent.com/assets/6192416/4282023/202fbac4-3d4f-11e4-87f5-ad520317da2f.jpg)
+![www](https://cloud.githubusercontent.com/assets/6192416/4297802/41c9e680-3e14-11e4-9154-53c7f0ab71e2.jpg)
+Slika 1 Domen
 
 Klasa CreativeWork opisuje strukturu kursa, obuhvatajući instruktore, univerzitete i same sesije kursa ukoliko ih ima. Za svaki kurs definisan je jezik, kao i samo trajanje kursa.
 
@@ -22,6 +23,9 @@ Organizacija u modelu prestavlja univerzitet odnosno samog organizatora ovog dog
 
 Klasa Duration prestavlja vremenski period trajanja samog kursa.
 Mapiranje odgovarajucih elemenata  u odgovarajuće elemente RDF vokabulara LRMI Grafički prikaz
+![m](https://cloud.githubusercontent.com/assets/6192416/4297826/c873924e-3e14-11e4-9846-0930c728b862.jpg)
+
+
 
 Prvi korak je transformisanje podataka iz JSON formata u odgovarajuće RDF triplete. Podaci se potom smeštaju u lokalnu RDF bazu. Aplikacija omogućava pristup sačuvanim podacima korišćenjem RESTful servisa. Radi transformisanja izvornih podataka izvršeno je parsiranje JSON dokumenta.
 
